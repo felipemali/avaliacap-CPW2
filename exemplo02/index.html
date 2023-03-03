@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Funções de Cores</title>
+</head>
+<body>
+    <div id="color-display-rgba"></div>
+
+    <div id="color-ranges-rgba">
+        <label for="red">Red</label>
+        <input 
+            type="range" 
+            name="red" 
+            id="red"
+            value="0"
+            min="0"
+            max="255"
+            >
+
+        <label for="green">Green</label>
+        <input 
+            type="range" 
+            name="green" 
+            id="green" 
+            value="0" 
+            min="0" 
+            max="255">
+
+        <label for="blue">Blue</label>
+        <input 
+            type="range" 
+            name="blue" 
+            id="blue" 
+            value="0" 
+            min="0" 
+            max="255">
+        
+        <label for="alpha">Alpha</label>
+        <input 
+            type="range" 
+            name="alpha" 
+            id="alpha" 
+            value="1" 
+            min="0" 
+            max="1"
+            step="0.1"
+            >
+    </div>
+
+    <script src="js/index.js"></script>
+</body>
+</html>
