@@ -1,0 +1,28 @@
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input[type=number] {
+    height: 35px;
+    width: 300px;
+    margin-bottom: 10px;
+    font-size: 100%;
+    text-align: center;
+}
+
+button {
+    background-color: blue;
+    padding: 10px 20px;
+    color: white;
+    font-size: 120%;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#resultado {
+    font-size: 120%;
+}
