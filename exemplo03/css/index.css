@@ -1,0 +1,30 @@
+#form-area {
+    width: 40%;
+    box-shadow: 10px 10px 30px #ccc;
+    border-radius: 30px;
+    margin: 50px auto;
+}
+
+#avg-speed-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+#avg-speed-form label {
+    font-family: 'regular';
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+#avg-speed-form input[type=number] {
+    height: 40px;
+    width: 60%;
+    margin-bottom: 20px;
+    text-align: center;
+    padding: 0 10px;
+    font-family: 'regular';
+    font-size: 20px;
+    border: 2px solid #aaa;
+}
