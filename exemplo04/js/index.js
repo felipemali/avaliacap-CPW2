@@ -2,9 +2,6 @@ $(document).ready(() => {
   $('#contact-phone').mask('(00) 00000-0000')
 })
 
-// Nosso banco de dados fake (mas muito fake)
-const contacts = []
-
 const saveContact = (event) => {
   event.preventDefault()
 
@@ -15,6 +12,7 @@ const saveContact = (event) => {
 
   const contact = { name, phone, email }
   contacts.push(contact)
+  storeContacts()
   printContact(contact)
   clearForm()
 }
@@ -56,3 +54,16 @@ const printContact = (contact) => {
   const contactsArea = document.getElementById('contacts-area')
   contactsArea.insertAdjacentHTML('afterbegin', contactCardValue)
 }
+
+const storeContacts = () => {
+  const contactsJson = JSON.stringify(contacts)
+  localStorage.setItem('contacts', contactsJson)
+}
+
+// Nosso banco de dados fake (mas muito fake)
+const contactsJson = localStorage.getItem('contacts')
+const contacts = contactsJson ? JSON.parse(contactsJson) : []
+// for (let i = 0; i < contacts.length; i++) {
+//   printContact(contacts[i])
+// }
+contacts.forEach((c) => printContact(c))
