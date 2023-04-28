@@ -10,6 +10,8 @@ const searchShows = (event) => {
   // '   '.trim() -> ''
   // 'Sidney Sousa'.trim() -> 'Sidney Sousa'
   if (query.trim()) {
+    $('not-found-message').style.display = 'none'
+
     const loadingAnimation = `
         <img src="/img/loading.gif" alt="Procurando...">
     `
@@ -20,11 +22,18 @@ const searchShows = (event) => {
       response.json().then((results) => {
         $('shows-area').innerHTML = ''
 
+        if (results.length === 0) {
+          console.log('Nenhum resultado')
+          $('not-found-message').style.display = 'block'
+          return
+        }
+
         // Laço de repetição para tratar cada um dos shows
         results.forEach((r) => {
           //const show = r.show
           const { show } = r
           const {
+            id,
             name,
             type,
             language,
@@ -40,6 +49,7 @@ const searchShows = (event) => {
           const channel = network ? network.name : webChannel.name
 
           const newShow = {
+            id,
             name,
             type,
             language,
@@ -57,14 +67,25 @@ const searchShows = (event) => {
 }
 
 const printCard = (show) => {
+  const posterId = `poster-${show.id}`
+  const titleId = `title-${show.id}`
+
   const showCard = `
         <div class="show-card">
-            <img src="${show.imageUrl}" alt="${show.name}">
+            <img id="${posterId}" src="${show.imageUrl}" alt="${show.name}">
 
-            <h3>${show.name}</h3>
+            <h3 id="${titleId}">${show.name}</h3>
         </div>
     `
 
   const showsArea = $('shows-area')
   showsArea.insertAdjacentHTML('beforeend', showCard)
+
+  $(posterId).onclick = () => openShowDetails(show)
+  $(titleId).onclick = () => openShowDetails(show)
+}
+
+const openShowDetails = (show) => {
+  localStorage.setItem('show', JSON.stringify(show))
+  window.location.href = 'details.html'
 }

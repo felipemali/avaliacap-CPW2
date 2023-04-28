@@ -45,6 +45,13 @@ body {
     cursor: pointer;
 }
 
+#not-found-message {
+    display: none;
+    text-align: center;
+    font-family: 'bold';
+    color: #2d55ff;
+}
+
 #shows-area {
     display: flex;
     flex-wrap: wrap;
@@ -63,9 +70,14 @@ body {
     flex-direction: column;
 }
 
+.show-card img {
+    cursor: pointer;
+}
+
 .show-card h3 {
     font-family: 'bold';
     text-align: center;
+    cursor: pointer;
 }
 
 @media screen and (max-width: 600px) {
