@@ -32,31 +32,14 @@ const searchShows = (event) => {
         results.forEach((r) => {
           //const show = r.show
           const { show } = r
-          const {
-            id,
-            name,
-            type,
-            language,
-            genres,
-            status,
-            image,
-            network,
-            webChannel,
-          } = show
+          const { id, name, image } = show
 
-          const isRunning = status === 'Ended' ? false : true
           const imageUrl = image ? image.medium : '/img/noimage.png'
-          const channel = network ? network.name : webChannel.name
 
           const newShow = {
             id,
             name,
-            type,
-            language,
-            genres,
-            isRunning,
             imageUrl,
-            channel,
           }
 
           printCard(newShow)
@@ -72,20 +55,16 @@ const printCard = (show) => {
 
   const showCard = `
         <div class="show-card">
+          <a href="/details.html?id=${show.id}">
             <img id="${posterId}" src="${show.imageUrl}" alt="${show.name}">
+          </a>
 
+          <a href="/details.html?id=${show.id}">
             <h3 id="${titleId}">${show.name}</h3>
+          </a>
         </div>
     `
 
   const showsArea = $('shows-area')
   showsArea.insertAdjacentHTML('beforeend', showCard)
-
-  $(posterId).onclick = () => openShowDetails(show)
-  $(titleId).onclick = () => openShowDetails(show)
-}
-
-const openShowDetails = (show) => {
-  localStorage.setItem('show', JSON.stringify(show))
-  window.location.href = 'details.html'
 }
