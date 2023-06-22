@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/css/create_user.css" />
+    <title>Exemplo Auth</title>
+  </head>
+
+  <body>
+    <div id="container">
+      <div id="form-container">
+        <div id="content">
+          <h1>Cadastro</h1>
+          <form id="registration-form">
+            <label for="email">E-mail</label>
+            <input
+              type="email"
+              id="email"
+              placeholder="email@exemplo.com"
+              required
+            />
+            <label for="password">Senha</label>
+            <input
+              type="password"
+              id="password"
+              placeholder="no mínimo 6 caracteres"
+              required
+            />
+            <label for="password">Confirme sua senha</label>
+            <input
+              type="password"
+              id="password-confirmation"
+              placeholder="*****************"
+              required
+            />
+
+            <input type="submit" value="Cadastrar" id="submit-button" />
+          </form>
+        </div>
+
+        <div id="result-panel"></div>
+      </div>
+      <img id="img-register" src="./src/img/register.svg" alt="" />
+    </div>
+
+    <script type="module" src="/src/create_user.js"></script>
+  </body>
+</html>

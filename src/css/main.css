@@ -1,0 +1,44 @@
+html,
+body {
+  background-color: #f0934b;
+  height: 100%;
+}
+
+.form {
+  margin-top: 50px;
+  width: 50%;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 2rem 2rem 2rem 2rem;
+  box-shadow: 0 7px 7px #b37445, 7px 7px 7px #b37445;
+}
+
+.tags {
+  margin-top: 2rem;
+}
+.logo {
+  font-family: "Arial", sans-serif;
+  font-size: 32px;
+  font-weight: bold;
+  color: #f0934b;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  transform: rotate(3deg);
+  display: inline-block;
+}
+
+@media (max-width: 720px) {
+  .form {
+    width: 300px;
+  }
+}
+@media (max-width: 1023px) {
+  .navbar-menu {
+    display: flex;
+  }
+  nav {
+    display: flex;
+    justify-content: space-between;
+  }
+}
