@@ -14,9 +14,9 @@ updateTasks();
 
 function mountTask(task) {
   return (
-    `<div id="task-${task.name}" class="container-task  is-medium">
+    `<div id="task-${task.name}" class="container-task ">
     <input onClick="deleteTask('${task.name}')"type="checkbox" />
-    <span class="name-task is-medium">${task.name}</span>` + "</div>"
+    <span class="name-task">${task.name}</span>` + "</div>"
   );
 }
 

@@ -3,32 +3,17 @@
   <head>
     <meta charset="utf-8" />
     <title>Página Principal</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
-    />
     <link rel="shortcut icon" type="image/jpg" href="/src/img/favicon.png" />
     <link rel="stylesheet" href="./src/css/main.css" />
   </head>
 
   <body>
     <header>
-      <nav class="navbar" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-          <a class="navbar-item logo" href="index.html">AddTasks</a>
-        </div>
-
-        <div class="navbar-menu">
-          <div class="navbar-end">
-            <div class="navbar-item">
-              <div class="buttons">
-                <a class="button is-danger" href="logout.html">
-                  <strong>Sair</strong>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
+      <nav>
+        <a class="logo" href="index.html">AddTasks</a>
+        <a id="button-logout" href="logout.html">
+          <button>Sair</button>
+        </a>
       </nav>
     </header>
 
@@ -37,8 +22,8 @@
         <h1>Todo List</h1>
       </div>
       <form action="#" onsubmit="add()">
-        <div class="field is-grouped">
-          <p class="control is-expanded">
+        <div id="container-input">
+          <p class="control">
             <input
               id="value"
               class="input"
@@ -52,7 +37,7 @@
         </div>
       </form>
 
-      <div class="field is-grouped input-filter">
+      <div class="input-filter">
         <input
           id="value-filter"
           class="input"
