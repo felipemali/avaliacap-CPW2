@@ -15,7 +15,7 @@
     <header>
       <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
-          <a class="navbar-item logo" href="index.html">AddTags</a>
+          <a class="navbar-item logo" href="index.html">AddTasks</a>
         </div>
 
         <div class="navbar-menu">
@@ -23,7 +23,7 @@
             <div class="navbar-item">
               <div class="buttons">
                 <a class="button is-danger" href="logout.html">
-                  <strong>Logout</strong>
+                  <strong>Sair</strong>
                 </a>
               </div>
             </div>
@@ -31,7 +31,11 @@
         </div>
       </nav>
     </header>
+
     <div class="container form">
+      <div id="title">
+        <h1>Todo List</h1>
+      </div>
       <form action="#" onsubmit="add()">
         <div class="field is-grouped">
           <p class="control is-expanded">
@@ -39,16 +43,25 @@
               id="value"
               class="input"
               type="text"
-              placeholder="Informe uma palavra"
+              placeholder="Digite uma palavra"
             />
           </p>
           <div class="buttons">
-            <button type="submit" class="button is-link">Adicionar</button>
+            <button type="submit" class="button">Adicionar</button>
           </div>
         </div>
       </form>
 
-      <div id="tags" class="tags"></div>
+      <div class="field is-grouped input-filter">
+        <input
+          id="value-filter"
+          class="input"
+          type="text"
+          placeholder="Filtre uma tarefa aqui"
+          oninput="filterTask()"
+        />
+      </div>
+      <div id="tasks" class="tasks"></div>
     </div>
     <script type="module" src="src/main.js"></script>
   </body>

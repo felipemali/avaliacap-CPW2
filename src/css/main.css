@@ -1,9 +1,57 @@
 html,
 body {
-  background-color: #f0934b;
+  background: #f0934b;
+
   height: 100%;
 }
+button[type="submit"] {
+  background-color: #b37445;
+  color: #fff;
+  border: none;
+  outline: 0;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+button[type="submit"]:hover {
+  color: #fff;
+}
+button[type="submit"]:focus {
+  color: #fff;
+}
+input[type="checkbox" i] {
+  background-color: red;
+  cursor: pointer;
+  appearance: auto;
+  box-sizing: border-box;
+  margin: 3px 3px 3px 8px;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1.5;
+}
+input[type="text"]::placeholder {
+  color: rgb(126, 126, 126);
+}
+#title {
+  padding: 1rem;
+  background-color: #c7c6c6;
+  color: #fff;
+  text-align: center;
+}
+#title h1 {
+  font-size: 1.4rem;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  color: #fff;
+}
+.field {
+  margin-top: 1.2rem;
+}
 
+.input-filter {
+  width: 30%;
+}
 .form {
   margin-top: 50px;
   width: 50%;
@@ -13,8 +61,27 @@ body {
   box-shadow: 0 7px 7px #b37445, 7px 7px 7px #b37445;
 }
 
-.tags {
-  margin-top: 2rem;
+.tasks {
+  /* margin-top: 2rem; */
+  display: flex;
+  flex-direction: column;
+}
+.container-task {
+  margin-top: 0.8rem;
+  padding: 0.2rem;
+  text-align: left;
+  width: 100%;
+  /* background-color: rgb(56, 54, 54); */
+  background-color: #777777;
+}
+.name-task {
+  font-size: 1.3rem;
+  color: #fff;
+
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 2;
+  margin-bottom: 0.3rem;
 }
 .logo {
   font-family: "Arial", sans-serif;
@@ -26,6 +93,15 @@ body {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   transform: rotate(3deg);
   display: inline-block;
+}
+.tag {
+  transition: all 0.3s;
+  animation-timing-function: ease;
+}
+
+.tag:hover {
+  /* transform: scale(1.05); */
+  cursor: pointer;
 }
 
 @media (max-width: 720px) {

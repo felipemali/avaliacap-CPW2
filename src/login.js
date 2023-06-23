@@ -38,6 +38,9 @@ const onSubmitLoginForm = (event) => {
       }
 
       $("result-panel").innerText = errorMessage;
+      setTimeout(() => {
+        $("result-panel").style.display = "none";
+      }, 5000);
     });
 };
 

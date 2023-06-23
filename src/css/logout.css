@@ -11,7 +11,9 @@ body {
 img {
   width: 60%;
 }
-button {
+#logout {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   width: 40%;
   padding: 0.8rem;
   border-radius: 6px;
@@ -22,7 +24,26 @@ button {
   color: #fff;
   font-size: 1.1rem;
 }
-button:hover {
+#logout:hover {
+  cursor: pointer;
+  background-color: rgb(238, 139, 139);
+}
+
+#button-back {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  width: 50px;
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: none;
+  display: block;
+  margin: 1rem 0 0 1rem;
+  background-color: rgb(165, 54, 54);
+  color: #fff;
+  font-size: 1.1rem;
+  text-decoration: none;
+}
+#button-back:hover {
   cursor: pointer;
   background-color: rgb(238, 139, 139);
 }
@@ -36,6 +57,7 @@ button:hover {
   box-shadow: 0 7px 7px #b37445, 7px 7px 7px #b37445;
   width: 50%;
   margin: auto;
+  border: 1px solid #fff;
 }
 @media (max-width: 720px) {
   #content {

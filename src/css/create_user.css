@@ -19,8 +19,7 @@ input {
 h1,
 p,
 label,
-#submit-button,
-#checkbox {
+#submit-button {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
@@ -78,11 +77,24 @@ label {
   width: 750px;
   height: 500px;
 }
+#result-panel {
+  color: red;
+  text-align: center;
+  font-size: 0.9rem;
+}
 @media (max-width: 1000px) {
   #img-register {
     display: none;
   }
   #container {
     margin: 0 1rem;
+  }
+  #form-container {
+    margin: 2rem auto;
+  }
+}
+@media (max-width: 460px) {
+  #form-container {
+    margin: 2rem auto;
   }
 }

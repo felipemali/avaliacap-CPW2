@@ -8,82 +8,76 @@ if (!token) {
 
 // Separar ações em objetos
 
-var tags = [
-  { name: "cadeira", color: "primary" },
-  { name: "dado", color: "info" },
-];
+let tasks = [{ name: "fazer prova de cpw" }, { name: "fazer prova de LP" }];
 
-const colorTags = [
-  "black",
-  "dark",
-  "light",
-  "white",
-  "primary",
-  "link",
-  "info",
-  "success",
-  "warning",
-  "danger",
-];
+updateTasks();
 
-updateTags();
-
-function mountTag(tag) {
+function mountTask(task) {
   return (
-    `<span id="tag-${tag.name}" class="tag is-${tag.color} is-medium">${tag.name}` +
-    `<button onClick="deleteTag('${tag.name}')" class="delete is-small"></button>` +
-    "</span>"
+    `<div id="task-${task.name}" class="container-task  is-medium">
+    <input onClick="deleteTask('${task.name}')"type="checkbox" />
+    <span class="name-task is-medium">${task.name}</span>` + "</div>"
   );
 }
 
-function writeTag(tags) {
-  document.getElementById("tags").innerHTML = tags;
+function writeTask(tasks) {
+  document.getElementById("tasks").innerHTML = tasks;
 }
 
-function updateTags() {
+function updateTasks(tasksFiltered) {
   let elements = "";
+  const valueInput = document.getElementById("value-filter").value;
 
   order();
 
-  tags.forEach((tag) => {
-    elements += mountTag(tag);
-  });
+  if (valueInput !== "") {
+    tasksFiltered.forEach((task) => {
+      elements += mountTask(task);
+    });
+  } else {
+    tasks.forEach((task) => {
+      elements += mountTask(task);
+    });
+  }
 
-  writeTag(elements);
+  writeTask(elements);
 }
 
 window.add = () => {
   const input = document.getElementById("value");
+  if (input.value !== "") {
+    tasks.push({
+      name: input.value,
+    });
 
-  tags.push({
-    name: input.value,
-    color: randomColor(),
-  });
-
-  updateTags();
-  input.value = "";
+    updateTasks();
+    input.value = "";
+  }
 };
-console.log(tags);
 
-function deleteTag(tagName) {
-  const index = tags.findIndex((tag) => {
-    return tag.name === tagName;
+window.deleteTask = (taskName) => {
+  const index = tasks.findIndex((task) => {
+    return task.name === taskName;
   });
 
   if (index > -1) {
-    tags.splice(index, 1);
+    tasks.splice(index, 1);
   }
 
-  document.getElementById(`tag-${tagName}`).remove();
-}
+  document.getElementById(`task-${taskName}`).remove();
+};
 
 function order() {
-  tags.sort((a, b) => {
+  tasks.sort((a, b) => {
     return a.name.toLowerCase().localeCompare(b.name.toLowerCase());
   });
 }
 
-function randomColor() {
-  const randomColorIndex = Math.floor(Math.random() * colorTags.length);
-  return colorTags[randomColorIndex];
-}
+window.filterTask = () => {
+  const valueInput = document.getElementById("value-filter").value;
+
+  const todosFiltered = tasks.filter((currentTodo) =>
+    currentTodo.name.toLowerCase().includes(valueInput)
+  );
+  updateTasks(todosFiltered);
+};

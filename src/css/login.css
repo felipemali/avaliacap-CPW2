@@ -1,6 +1,7 @@
 html,
 body {
   background-color: #f0934b;
+
   height: 100%;
   margin: 0;
   display: flex;
@@ -51,7 +52,6 @@ label {
 #container {
   display: flex;
   max-width: 1200px;
-
   width: 100%;
   background-color: #f3f1f1;
   box-shadow: 0 7px 7px #b37445, 7px 7px 7px #b37445;
@@ -88,11 +88,24 @@ label {
   width: 750px;
   height: 450px;
 }
+#result-panel {
+  color: red;
+  text-align: center;
+  font-size: 0.9rem;
+}
 @media (max-width: 1000px) {
   #img-login {
     display: none;
   }
   #container {
     margin: 0 1rem;
+  }
+  #form-container {
+    margin: 2rem auto;
+  }
+}
+@media (max-width: 460px) {
+  #form-container {
+    margin: 2rem auto;
   }
 }

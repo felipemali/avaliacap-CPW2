@@ -1,12 +1,12 @@
-import { initializeApp } from 'firebase/app'
+import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyDq_L1im5fkRCNZkUqL0VF-sos8SbuZKUU',
-  authDomain: 'exemplo-autenticacao-2ce42.firebaseapp.com',
-  projectId: 'exemplo-autenticacao-2ce42',
-  storageBucket: 'exemplo-autenticacao-2ce42.appspot.com',
-  messagingSenderId: '952884342182',
-  appId: '1:952884342182:web:841d330200e16b610e7367',
-}
+  apiKey: "AIzaSyDahwqQPMogO9qNQu_zjftn50MZ6SIdFc4",
+  authDomain: "exemplo-autenticacao-8bb22.firebaseapp.com",
+  projectId: "exemplo-autenticacao-8bb22",
+  storageBucket: "exemplo-autenticacao-8bb22.appspot.com",
+  messagingSenderId: "678769268774",
+  appId: "1:678769268774:web:4faa61fbe1f79cb62daee7",
+};
 
-export const firebaseApp = initializeApp(firebaseConfig)
+export const firebaseApp = initializeApp(firebaseConfig);
